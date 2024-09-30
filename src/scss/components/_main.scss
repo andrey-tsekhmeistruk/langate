@@ -1,0 +1,16 @@
+.main {
+  @include flex(initial, initial, column, px-to-rem(24));
+
+  &-title {
+    @include fontSettings(px-to-rem(30), px-to-rem(36));
+    color: $grey-400;
+    text-transform: uppercase;
+  }
+
+  &-secondary-title {
+    @include fontSettings(px-to-rem(20), px-to-rem(24));
+    color: $grey-900;
+    margin-bottom: px-to-rem(-16);
+    text-transform: uppercase;
+  }
+}

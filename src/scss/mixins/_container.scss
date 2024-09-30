@@ -1,0 +1,15 @@
+@mixin container($max-width-md: $container-md) {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 px-to-rem(8);
+  box-sizing: border-box;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 px-to-rem(24);
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: $max-width-md;
+  }
+}

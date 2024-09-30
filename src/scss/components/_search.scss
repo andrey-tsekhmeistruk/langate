@@ -1,0 +1,28 @@
+.search {
+  @include flex(center, initial, row, px-to-rem(16));
+  @include fontSettings(px-to-rem(20), px-to-rem(24));
+  color: $grey-100;
+  flex-wrap: wrap;
+  margin: px-to-rem(20) 0;
+  text-transform: capitalize;
+  white-space: nowrap;
+
+  @media screen and (min-width: $breakpoint-md) {
+    @include fontSettings(px-to-rem(24), px-to-rem(30));
+    flex-wrap: nowrap;
+    margin: px-to-rem(40) px-to-rem(100);
+  }
+
+  &-field {
+    background-color: $grey-800;
+    color: $light;
+    height: px-to-rem(38);
+    padding: 0 px-to-rem(16);
+    transition: 0.3s linear;
+    width: 100%;
+
+    &:hover {
+      background-color: $grey-750;
+    }
+  }
+}

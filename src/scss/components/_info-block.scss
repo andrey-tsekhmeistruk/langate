@@ -1,0 +1,11 @@
+.info-block {
+  @include flex(initial, initial, column, px-to-rem(12));
+  margin-bottom: px-to-rem(10);
+
+  &-message {
+    @include fontSettings(px-to-rem(18), px-to-rem(24), 300);
+    background-color: $grey-400;
+    color: $light-50;
+    padding: px-to-rem(20);
+  }
+}

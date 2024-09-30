@@ -1,0 +1,115 @@
+.sidebar {
+  @include flex(initial, initial, column, px-to-rem(16));
+  flex: 1;
+
+  &-cards {
+    @include flex(initial, initial, column, px-to-rem(16));
+    height: 100%;
+  }
+
+  &-cards-item {
+    @include flex(initial, space-between, row, px-to-rem(10));
+    color: $light-50;
+    height: px-to-rem(100);
+    overflow: hidden;
+    padding: px-to-rem(16);
+    position: relative;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:before {
+      background: $dark-900;
+      content: '';
+      inset: 0;
+      position: absolute;
+      transition: 0.3s linear;
+      z-index: 1;
+    }
+
+    &:hover {
+      @media screen and (min-width: $breakpoint-sm) {
+        height: px-to-rem(220);
+      }
+
+      &:before {
+        background: $dark-700;
+      }
+
+      .sidebar-cards-item-image {
+        transform: scale(1.2);
+      }
+    }
+
+    &.column {
+      flex-direction: column;
+    }
+  }
+
+  &-cards-item-image {
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    position: absolute;
+    transition: 0.3s linear;
+    width: 100%;
+  }
+
+  &-cards-item-title {
+    @include fontSettings(px-to-rem(20), px-to-rem(24), 300);
+    position: relative;
+    text-transform: capitalize;
+    z-index: 2;
+
+    @media screen and (min-width: $breakpoint-md) {
+      @include fontSettings(px-to-rem(22), px-to-rem(24), 300);
+    }
+  }
+
+  &-cards-item-info {
+    @include flex(initial, initial, column);
+    position: relative;
+    text-align: right;
+    z-index: 2;
+  }
+
+  &-cards-item-info-title {
+    @include fontSettings(px-to-rem(24), px-to-rem(30), 300);
+
+    @media screen and (min-width: $breakpoint-md) {
+      @include fontSettings(px-to-rem(30), px-to-rem(36), 300);
+    }
+  }
+
+  &-cards-item-info-sub-title {
+    @include fontSettings(px-to-rem(16), px-to-rem(20), 300);
+    text-transform: capitalize;
+
+    @media screen and (min-width: $breakpoint-md) {
+      @include fontSettings(px-to-rem(18), px-to-rem(22), 300);
+    }
+  }
+
+  &-cards-item-icon {
+    @include boxSize(px-to-rem(40));
+    object-fit: contain;
+    z-index: 1;
+
+    @media screen and (min-width: $breakpoint-md) {
+      @include boxSize(px-to-rem(60));
+    }
+  }
+
+  &-cards-item-field {
+    background-color: $dark-300;
+    border: px-to-rem(2) solid $light-50;
+    color: $light;
+    height: px-to-rem(38);
+    padding: 0 px-to-rem(12);
+    transition: 0.3s linear;
+    z-index: 1;
+
+    &:hover {
+      background-color: $dark-200;
+    }
+  }
+}

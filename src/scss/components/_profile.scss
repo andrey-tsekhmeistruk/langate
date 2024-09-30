@@ -1,0 +1,24 @@
+.profile {
+  @include flex(initial, initial, row, px-to-rem(16));
+  background-color: $primary-200;
+  padding: px-to-rem(16);
+
+  &-image {
+    @include boxSize(px-to-rem(100));
+  }
+
+  &-info {
+    @include flex(initial, initial, column);
+  }
+
+  &-title {
+    @include fontSettings(px-to-rem(30), px-to-rem(36));
+    color: $light-50;
+    text-transform: uppercase;
+  }
+
+  &-description {
+    @include fontSettings(px-to-rem(14), px-to-rem(20), 300);
+    color: $light-50;
+  }
+}

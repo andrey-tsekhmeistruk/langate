@@ -1,0 +1,76 @@
+.select-wrapper {
+  position: relative;
+  width: px-to-rem(200);
+
+  &.select-open {
+    .select-options {
+      display: block;
+    }
+
+    .select-icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.select {
+  position: relative;
+
+  &-box {
+    @include flex(center, space-between, row, px-to-rem(10));
+    background-color: $light-200;
+    padding: px-to-rem(4) px-to-rem(34) px-to-rem(4) px-to-rem(10);
+    border: px-to-rem(2) solid $light-300;
+    cursor: pointer;
+    transition: 0.3s linear;
+
+    &:hover {
+      border-color: $grey-500;
+    }
+  }
+
+  &-text {
+    @include fontSettings(px-to-rem(18), px-to-rem(24));
+    color: $dark-800;
+  }
+
+  &-icon-wrapper {
+    @include flex(center, center);
+    background-color: $dark-600;
+    bottom: px-to-rem(2);
+    position: absolute;
+    right: px-to-rem(2);
+    top: px-to-rem(2);
+    width: px-to-rem(30);
+  }
+
+  &-icon {
+    font-size: px-to-rem(14);
+    transition: transform 0.3s ease;
+  }
+
+  &-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $light;
+    border: px-to-rem(2) solid $light-300;
+    border-top: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+  }
+
+  &-option {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $light-100;
+    }
+  }
+}

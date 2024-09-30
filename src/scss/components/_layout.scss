@@ -1,0 +1,18 @@
+.layout {
+  @include flex(initial, initial, column);
+  flex: 1;
+  padding-bottom: px-to-rem(40);
+
+  &-content {
+    @include grid(px-to-rem(20), 1fr);
+    flex: 1;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      grid-template-columns: px-to-rem(270) 1fr;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      @include grid(px-to-rem(40), px-to-rem(350) 1fr);
+    }
+  }
+}

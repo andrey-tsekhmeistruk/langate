@@ -1,0 +1,21 @@
+.socials {
+  @include flex(center, center, row, px-to-rem(20));
+
+  &-item-link {
+    @include flex(center, center);
+    transition: 0.3s linear;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  &-item-icon {
+    @include boxSize(px-to-rem(24));
+    object-fit: contain;
+  }
+}

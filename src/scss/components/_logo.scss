@@ -1,0 +1,11 @@
+.logo {
+  @include flex(center, center);
+
+  &-image {
+    @include boxSizeConfigured(px-to-rem(50), px-to-rem(100));
+
+    @media screen and (min-width: $breakpoint-sm) {
+      @include boxSizeConfigured(px-to-rem(100), px-to-rem(200));
+    }
+  }
+}

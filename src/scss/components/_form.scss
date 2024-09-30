@@ -1,0 +1,31 @@
+.form {
+  @include flex(initial, initial, column, px-to-rem(16));
+  margin-bottom: px-to-rem(16);
+
+  &-title {
+    @include fontSettings(px-to-rem(18), px-to-rem(24), 300);
+    color: $accent;
+  }
+
+  &-sub-title {
+    @include fontSettings(px-to-rem(22), px-to-rem(24), 300);
+    color: $grey-700;
+
+    span {
+      color: $accent;
+    }
+  }
+
+  &-items {
+    @include flex(initial, initial, column, px-to-rem(8));
+    margin-top: px-to-rem(10);
+  }
+
+  &-item {
+    @include flex(center, initial, row, px-to-rem(12));
+  }
+
+  &-item-label {
+    min-width: px-to-rem(100);
+  }
+}
